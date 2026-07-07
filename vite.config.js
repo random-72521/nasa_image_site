@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 
 export default defineConfig ({
-    base = "/nasa_image_site/",
+    base: "/nasa_image_site/",
 
 });
