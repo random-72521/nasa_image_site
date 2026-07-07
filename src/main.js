@@ -15,6 +15,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
         let img = document.createElement("img")
         img.src = data.hdurl
         document.querySelector("#app").appendChild(img);
+        console.log("aifhiarghreighareigharighareighraeighareighaerighreih")
     })
 
     
