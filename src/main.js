@@ -16,7 +16,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
         
         
         if (data.media_type == "image") {
-            image = document.createElement("img")
+            const image = document.createElement("img")
             image.src = data.hdurl
             image.id = "apod-image"
             image.style.display = "flex"
@@ -26,11 +26,11 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
         }
 
         else if (data.media_type == "video") {
-            video = document.createElement("video")
+            const video = document.createElement("video")
             video.src = data.url;
             video.id = "apod-image"
-            image.style.display = "flex"
-            image.style.alignSelf = "center"
+            video.style.display = "flex"
+            video.style.alignSelf = "center"
 
 
             document.querySelector("#image").appendChild(video);
