@@ -6,14 +6,14 @@ import { setupCounter } from './counter.js'
 
 
 const API_KEY = import.meta.env.VITE_NASA_API_KEY;
-
+document.addEventListener('DOMContentLoaded', () => {
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
     .then(response => response.json())
     .then(data => {
         console.log(data);
         
         document.getElementById("loading").innerHTML = ""
-        
+
         console.log("waweeee");
         
         
@@ -50,4 +50,4 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
     })
 
 
-
+})
