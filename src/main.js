@@ -12,17 +12,35 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
     .then(data => {
         console.log(data)
         
-        document.querySelector("#app").innerHTML = "<p></p>";
+        document.getElementById("loading").innerHTML = ""
+        
+        
+        if (data.media_type == "image") {
+            image = document.createElement("img")
+            image.src = data.hdurl
+            image.id = "apod-image"
+            image.style.display = "flex"
+            image.style.alignSelf = "center"
 
-        let img = document.createElement("img")
-        img.src = data.hdurl
-        document.querySelector("#app").appendChild(img);
-        console.log("aifhiarghreighareigharighareighraeighareighaerighreih")
+            document.getElementById("#image").appendChild(image)
+        }
+
+        else if (data.media_type == "video") {
+            video = document.createElement("video")
+            video.src = data.url;
+            video.id = "apod-image"
+            image.style.display = "flex"
+            image.style.alignSelf = "center"
+
+
+            document.querySelector("#image").appendChild(video);
+
+        } else {
+            document.querySelector("#app").innerHTML = "<p>Some weird stuff happened.</p>";
+        }
+
         
     })
 
-    
 
-
-document.querySelector("#app").innerHTML = "<p>Loading...</p>";
 

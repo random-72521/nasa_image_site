@@ -3,11 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel = "stylesheet" href = "src/style.css">
+    <link href="https://fonts.cdnfonts.com/css/orbitron" rel="stylesheet">
+                
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nasa-image-site</title>
+    <title>NASA APOD</title>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  <body style = "display: flex; justify-content: center; flex-direction:column">
+    <p>NASA - Astronomy Picture of the Day</p>
+    <div id = "app" style = "display: flex; width: 100%; height: 880px; justify-content:center; align-items: center; 
+    flex-direction: column">
+      <p id = "loading">Loading...</p>
+
+      <div id = "imageArea" style = "display: flex; height: 70%; width:85%; flex-direction: column; border: 1px solid #324447">
+
+        <div id = "timeTitle" style = "display: flex; flex-direction: row; justify-content: space-between; padding: 8px">
+          <p>Title</p>
+          <p style = "display: flex; align-self: flex-end">Time</p>
+        </div>
+
+        <div id = "imageDiv" style = "display:flex; flex-direction: column;">
+          <div id = "bracketDivs" style = "display: flex; flex-direction:row; height: 50px; justify-content: space-between;
+          padding: 8px">
+            <div class = "bracket-left"></div>
+            <div class = "bracket-right"></div>
+          </div>
+          <div id = "image">
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id = "info">
+        info and shi
+      </div>
+
+    </div>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
