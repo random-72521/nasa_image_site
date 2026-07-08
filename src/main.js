@@ -13,15 +13,16 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
         console.log(data)
         
         document.getElementById("loading").innerHTML = ""
+        console.log("waweeee")
         
         
         if (data.media_type == "image") {
             const image = document.createElement("img")
-            image.src = data.hdurl
-            image.id = "apod-image"
-            image.style.display = "flex"
-            image.style.alignSelf = "center"
-            image.style.width = "250px"
+            image.src = data.hdurl;
+            image.id = "apod-image";
+            image.style.display = "flex";
+            image.style.alignSelf = "center";
+            image.style.width = "250px";
 
             document.getElementById("image").appendChild(image)
         }
@@ -29,11 +30,11 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
         else if (data.media_type == "video") {
             const video = document.createElement("video")
             video.src = data.url;
-            video.id = "apod-image"
-            video.controls = true
-            video.style.display = "flex"
-            video.style.alignSelf = "center"
-            video.style.width = "250px"
+            video.id = "apod-image";
+            video.controls = true;
+            video.style.display = "flex";
+            video.style.alignSelf = "center";
+            video.style.width = "250px";
 
 
 
