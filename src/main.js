@@ -40,14 +40,14 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
 
 
 
-            document.querySelector("image").appendChild(video);
+            document.querySelector("#image").appendChild(video);
 
         } else {
-            document.querySelector("app").innerHTML = "<p>Some weird stuff happened.</p>";
+            document.querySelector("#app").innerHTML = "<p>Some weird stuff happened.</p>";
         }
 
         
     })
 
 
-})
+});
