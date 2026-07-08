@@ -35,7 +35,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
             video.controls = true;
             video.style.display = "flex";
             video.style.alignSelf = "center";
-            video.style.objectFit = "cover";
+            video.style.width = "250px";
 
 
 
