@@ -10,10 +10,11 @@ const API_KEY = import.meta.env.VITE_NASA_API_KEY;
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        console.log(data);
         
         document.getElementById("loading").innerHTML = ""
-        console.log("waweeee")
+        
+        console.log("waweeee");
         
         
         if (data.media_type == "image") {
@@ -35,6 +36,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
             video.style.display = "flex";
             video.style.alignSelf = "center";
             video.style.width = "250px";
+            video.style.objectFit = "cover";
 
 
 
