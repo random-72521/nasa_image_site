@@ -23,7 +23,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
             image.id = "apod-image";
             image.style.display = "flex";
             image.style.alignSelf = "center";
-            image.style.width = "250px";
+            image.style.width = "900px";
 
             document.getElementById("image").appendChild(image)
         }
@@ -35,7 +35,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
             video.controls = true;
             video.style.display = "flex";
             video.style.alignSelf = "center";
-            video.style.width = "250px";
+            video.style.width = "900px";
 
 
 
