@@ -30,6 +30,8 @@ function updateClock() {
 
 }
 
+updateClock();
+
 
 const API_KEY = import.meta.env.VITE_NASA_API_KEY;
 document.addEventListener('DOMContentLoaded', () => {
@@ -76,5 +78,4 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
 
 });
 
-updateClock();
 
