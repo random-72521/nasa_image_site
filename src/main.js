@@ -21,9 +21,8 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
             const image = document.createElement("img")
             image.src = data.hdurl;
             image.id = "apod-image";
-            image.style.display = "flex";
-            image.style.alignSelf = "center";
-            image.style.justifySelf = "center";
+            image.style.display = "block";
+            image.style.margin = "auto"
             image.style.objectFit = "cover";
 
             document.getElementById("image").appendChild(image)
@@ -34,9 +33,8 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
             video.src = data.url;
             video.id = "apod-image";
             video.controls = true;
-            video.style.display = "flex";
-            video.style.alignSelf = "center";
-            video.style.justifySelf = "center";
+            video.style.display = "block";
+            video.style.margin = "auto"
             video.style.objectFit = "cover";
 
 
