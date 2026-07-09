@@ -25,6 +25,7 @@ function updateClock() {
     document.getElementById("time").innerHTML = `${currTime} UTC${timeZoneOffset}`;
     
     document.getElementById("date").innerHTML = `${day}, ${month}/${date}/${year}`
+    
     setTimeout(updateClock, 1000)
 
 }
