@@ -8,10 +8,14 @@ import { setupCounter } from './counter.js'
 function updateClock() {
     let now = new Date();
 
-    let currTime = now.toLocaleDateString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit"});
+    let currTime = now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit"});
     let timeZone = now.getTimezoneOffset();
+    let timeZoneOffset = timeZone / 60 * -1;
+    if (timeZoneOffset >= 0) {
+        timeZoneOffset = `+${timeZoneOffset}`
+    }
 
-    document.getElementById("time").innerHTML = `${currTime} ${timeZone}`;
+    document.getElementById("time").innerHTML = `${currTime} UTC${timeZoneOffset}`;
 
     setTimeout(updateClock, 1000)
 
