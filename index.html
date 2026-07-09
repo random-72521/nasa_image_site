@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NASA APOD</title>
-    <script type="module" crossorigin src="/nasa_image_site/assets/index-h4q3wOOd.js"></script>
+    <script type="module" crossorigin src="/nasa_image_site/assets/index-BUM8k4aN.js"></script>
     <link rel="stylesheet" crossorigin href="/nasa_image_site/assets/index-DTUQjr6t.css">
   </head>
   <body style = "display: flex; justify-content: center; flex-direction:column">
@@ -26,12 +26,18 @@
 
         <div id = "imageDiv" style = "display:flex; flex-direction: column;">
           <div id = "bracketDivs" style = "display: flex; flex-direction:row; height: 50px; justify-content: space-between;
-          padding: 8px">
+          padding: 16px">
             <div class = "bracket-left"></div>
             <div class = "bracket-right"></div>
           </div>
           
           <div id = "image" style = "display: flex; overflow: hidden; height: 450px; width: 100%">
+          </div>
+
+          <div id = "date" style = "display: flex; align-self: flex-start; background-color: rgba(178, 129, 13, 0.5); color: orange;
+          width: 300px; height: 35px; transform: translateY(-25px) translateX(15px); align-items: center; justify-content: center;
+          border-radius: 4px; border: 1px solid rgba(225, 172, 15, 0.7)">
+            <p>Wednesday, 88/88/8888</p>
           </div>
 
         </div>
