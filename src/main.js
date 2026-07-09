@@ -15,8 +15,14 @@ function updateClock() {
         timeZoneOffset = `+${timeZoneOffset}`
     }
 
-    document.getElementById("time").innerHTML = `${currTime} UTC${timeZoneOffset}`;
+    let year = now.getFullYear()
+    let month = now.getMonth() + 1
+    let date = now.getDate()
+    let day = now.getDay()
 
+    document.getElementById("time").innerHTML = `${currTime} UTC${timeZoneOffset}`;
+    
+    document.getElementById("date").innerHTML = `${day}, ${month}/${date}/${year}`
     setTimeout(updateClock, 1000)
 
 }
