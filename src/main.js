@@ -15,7 +15,7 @@ function updateClock() {
         timeZoneOffset = `+${timeZoneOffset}`
     }
 
-    weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
     let year = now.getFullYear()
     let month = now.getMonth() + 1
@@ -25,7 +25,7 @@ function updateClock() {
     document.getElementById("time").innerHTML = `${currTime} UTC${timeZoneOffset}`;
     
     document.getElementById("date").innerHTML = `${day}, ${month}/${date}/${year}`
-    
+
     setTimeout(updateClock, 1000)
 
 }
