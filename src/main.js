@@ -5,7 +5,7 @@ import heroImg from './assets/hero.png'
 import { setupCounter } from './counter.js'
 
 
-function updateClock() {
+function updateClock() { //function to update the clock every second
     let now = new Date();
 
     let currTime = now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit"});
@@ -30,31 +30,32 @@ function updateClock() {
 
 }
 
-updateClock();
+updateClock(); //load clock before loading apod
 
 
-const API_KEY = import.meta.env.VITE_NASA_API_KEY;
-document.addEventListener('DOMContentLoaded', () => {
-fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
-    .then(response => response.json())
+const API_KEY = import.meta.env.VITE_NASA_API_KEY; //getting api key from dotenv
+
+document.addEventListener('DOMContentLoaded', () => { //only runs fetch() after dom has loaded so it can access html elements
+fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url using api key
+    .then(response => response.json()) //format response
     .then(data => {
         console.log(data);
         
-        document.getElementById("loading").innerHTML = ""
+        document.getElementById("loading").innerHTML = "" //remove loading 
         
         
-        if (data.media_type == "image") {
+        if (data.media_type == "image") { //if it is an image
             const image = document.createElement("img");
             image.src = data.hdurl;
             image.id = "apod-image";
             image.style.display = "block";
-            image.style.margin = "auto"
-            image.style.objectFit = "cover";
+            image.style.margin = "auto" //center
+            image.style.objectFit = "cover"; //fit entire parent div without changing aspect ratios
 
             document.getElementById("image").appendChild(image);
         }
 
-        else if (data.media_type == "video") {
+        else if (data.media_type == "video") { // if it is a video
             const video = document.createElement("video");
             video.src = data.url;
             video.id = "apod-image";
@@ -71,7 +72,8 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
             document.querySelector("#app").innerHTML = "<p>Some weird stuff happened.</p>";
         }
         
-        document.getElementById("title").innerHTML = data.title;
+        document.getElementById("title").innerHTML = data.title; //add title and explanation
+        document.getElementById("info").innerHTML = data.explanation;
         
     })
 
