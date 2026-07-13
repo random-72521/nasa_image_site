@@ -31,19 +31,12 @@ function updateClock() { //function to update the clock every second
 }
 
 
-function stopScanline(minDelay) {
-
-    const waitTime = Math.max(0, minDelay - (Date.now() - startTime));
 
 
-    setTimeout(() => {
-        let scanline = document.querySelector(".scanline");
-        scanline.classList.toggle("paused");
-        }, waitTime
-    )
 
 
-}
+
+
 
 
 
@@ -63,7 +56,14 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
     .then(data => {
         console.log(data);
 
-        stopScanline(2500);
+        const waitTime = Math.max(0, 3000 - (Date.now() - startTime));
+
+
+        setTimeout(() => {
+            let scanline = document.querySelector(".scanline");
+            scanline.classList.toggle("paused");
+            }, waitTime
+        )
 
         
         document.getElementById("loading").innerHTML = "" //remove loading 
