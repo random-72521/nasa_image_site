@@ -31,8 +31,18 @@ function updateClock() { //function to update the clock every second
 }
 
 
-function sleep(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
+function stopScanline(minDelay) {
+
+    const waitTime = Math.max(0, minDelay - (Date.now() - startTime));
+
+
+    setTimeout(() => {
+        let scanline = document.querySelector(".scanline");
+        scanline.classList.toggle("paused");
+        }, waitTime
+    )
+
+
 }
 
 
@@ -44,16 +54,16 @@ updateClock(); //load clock before loading apod
 
 const API_KEY = import.meta.env.VITE_NASA_API_KEY; //getting api key from dotenv
 
+
+const startTime = Date.now();
+
 document.addEventListener('DOMContentLoaded', () => { //only runs fetch() after dom has loaded so it can access html elements
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url using api key
     .then(response => response.json()) //format response
     .then(data => {
         console.log(data);
 
-        await sleep(3000);
-
-        let scanline = document.querySelector(".scanline");
-        scanline.classList.toggle("paused");
+        stopScanline(2500);
 
         
         document.getElementById("loading").innerHTML = "" //remove loading 
