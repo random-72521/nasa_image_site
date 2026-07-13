@@ -44,7 +44,7 @@ function updateClock() { //function to update the clock every second
 updateClock(); //load clock before loading apod
 
 
-
+  
 const API_KEY = import.meta.env.VITE_NASA_API_KEY; //getting api key from dotenv
 
 
@@ -62,8 +62,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         setTimeout(() => {
             let scanline = document.querySelector(".scanline");
             scanline.classList.toggle("paused");
-            }, waitTime
-        )
+
 
         
         document.getElementById("loading").innerHTML = "" //remove loading 
@@ -100,9 +99,12 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         document.getElementById("title").innerHTML = data.title; //add title and explanation
         document.getElementById("info").innerHTML = data.explanation;
         
-    })
+        })
 
 
-});
+    });
+
+    }, waitTime
+)
 
 
