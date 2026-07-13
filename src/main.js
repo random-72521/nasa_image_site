@@ -46,7 +46,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
     .then(data => {
         console.log(data);
 
-        let scanline = document.querySelector("scanline");
+        let scanline = document.querySelector(".scanline");
         scanline.classList.toggle("paused");
 
         
