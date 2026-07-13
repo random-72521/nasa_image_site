@@ -56,7 +56,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
     .then(data => {
         console.log(data);
 
-        const waitTime = Math.max(0, 3000 - (Date.now() - startTime));
+        var waitTime = Math.max(0, 3000 - (Date.now() - startTime));
 
 
         setTimeout(() => {
