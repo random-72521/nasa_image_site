@@ -30,7 +30,12 @@ function updateClock() { //function to update the clock every second
 
 }
 
+
+
+
+
 updateClock(); //load clock before loading apod
+
 
 
 const API_KEY = import.meta.env.VITE_NASA_API_KEY; //getting api key from dotenv
@@ -40,6 +45,10 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
     .then(response => response.json()) //format response
     .then(data => {
         console.log(data);
+
+        let scanline = document.getElementsByClassName("scanline");
+        scanline.classList.toggle(paused);
+
         
         document.getElementById("loading").innerHTML = "" //remove loading 
         
