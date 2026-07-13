@@ -31,6 +31,10 @@ function updateClock() { //function to update the clock every second
 }
 
 
+function sleep(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
 
 
 
@@ -45,6 +49,8 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
     .then(response => response.json()) //format response
     .then(data => {
         console.log(data);
+
+        sleep(3000);
 
         let scanline = document.querySelector(".scanline");
         scanline.classList.toggle("paused");
