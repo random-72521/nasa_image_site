@@ -31,16 +31,6 @@ function updateClock() { //function to update the clock every second
 }
 
 
-
-
-
-
-
-
-
-
-
-
 updateClock(); //load clock before loading apod
 
 
