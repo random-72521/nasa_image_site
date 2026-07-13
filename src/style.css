@@ -54,3 +54,8 @@ body {
 
     
 }
+
+.scanline.paused{
+    animation-play-state: paused;
+    opacity: 0;
+}
