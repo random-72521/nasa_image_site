@@ -98,13 +98,14 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         
         document.getElementById("title").innerHTML = data.title; //add title and explanation
         document.getElementById("info").innerHTML = data.explanation;
+            }, waitTime
+)
         
         })
 
 
     });
 
-    }, waitTime
-)
+
 
 
