@@ -13,6 +13,11 @@ body {
     color: var(--font-color);
 }
 
+table, th, td {
+    border: 1px solid var(--window-color);
+    border-collapse: collapse;
+}
+
 #imageArea {
     background-color: var(--window-color);
 }

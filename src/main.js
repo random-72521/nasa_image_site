@@ -64,7 +64,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
             image.id = "apod-image";
             image.style.display = "block";
             image.style.margin = "auto" //center
-            image.style.objectFit = "cover"; //fit entire parent div without changing aspect ratios
+            image.style.objectFit = "contain"; //fit entire parent div without changing aspect ratios
 
             document.getElementById("image").appendChild(image);
         }
@@ -76,7 +76,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
             video.controls = true;
             video.style.display = "block";
             video.style.margin = "auto"
-            video.style.objectFit = "cover";
+            video.style.objectFit = "contain";
 
 
 
@@ -88,13 +88,12 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         
         document.getElementById("title").innerHTML = data.title; //add title and explanation
         document.getElementById("info").innerHTML = data.explanation;
-        }, waitTime
-)
+        }, waitTimes)
         
-        })
+    })
 
 
-    });
+});
 
 
 
