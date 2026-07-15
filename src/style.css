@@ -14,8 +14,12 @@ body {
 }
 
 table, th, td {
-    border: 1px solid var(--window-color);
+    border: 1px solid #2d4347;
     border-collapse: collapse;
+}
+
+th,td{
+    padding: 8px
 }
 
 #imageArea {
