@@ -63,6 +63,8 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
             image.src = data.hdurl;
             image.id = "apod-image";
             image.style.display = "block";
+            image.style.width = "100%";
+            image.style.height = "100%";
             image.style.margin = "auto" //center
             image.style.objectFit = "contain"; //fit entire parent div without changing aspect ratios
 
@@ -75,6 +77,8 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
             video.id = "apod-image";
             video.controls = true;
             video.style.display = "block";
+            video.style.width = "100%";
+            video.style.height = "100%";
             video.style.margin = "auto"
             video.style.objectFit = "contain";
 
