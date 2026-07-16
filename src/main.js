@@ -30,6 +30,15 @@ function updateClock() { //function to update the clock every second
 
 }
 
+function formatCredits(credits) {
+    let splitCredits = credits.split(" Text: ");
+    let imgCredits = splitCredits[0];
+    let textCredits = splitCredits[1];
+    imgCredits = imgCredits.replace(/\n/g, "");
+    textCredits = textCredits.replace(/\n/g, "");
+    document.getElementById("credits").innerHTML = `${imgCredits}, Text: ${textCredits}`;
+}
+
 
 updateClock(); //load clock before loading apod
 
@@ -60,7 +69,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         
         if (data.media_type == "image") { //if it is an image
             const image = document.createElement("img");
-            image.src = data.hdurl;
+            image.src = data.url;
             image.id = "apod-image";
             image.style.display = "block";
             image.style.width = "100%";
@@ -89,9 +98,15 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         } else {
             document.querySelector("#app").innerHTML = "<p>Some weird stuff happened.</p>";
         }
+
         
         document.getElementById("title").innerHTML = data.title; //add title and explanation
         document.getElementById("info").innerHTML = data.explanation;
+        
+        document.getElementById("media-type").innerHTML = data.media_type[0].toUpperCase() + data.media_type.slice(1);
+        document.getElementById("date").innerHTML = data.date.replace(/-/g, "/");
+        document.getElementById("credits").innerHTML = formatCredits(data.copyright);
+
         }, waitTime)
         
     })
