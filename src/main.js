@@ -41,9 +41,9 @@ function formatCredits(credits) {
 
 
 function formatDate(date) {
-    const now = new Date(date);
-    const formattedDate = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
-    document.getElementById("image-date").innerHTML = formattedDate; 
+    const dates = data.date.split('-');
+    const formattedDate = `${dates[1]}/${dates[2]}/${dates[0]}`;
+    document.getElementById("image-date").innerHTML = formattedDate;
 }
 
 
