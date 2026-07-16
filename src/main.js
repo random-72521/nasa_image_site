@@ -107,6 +107,10 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         document.getElementById("date").innerHTML = data.date.replace(/-/g, "/");
         document.getElementById("credits").innerHTML = formatCredits(data.copyright);
 
+        console.log(data.media_type[0].toUpperCase() + data.media_type.slice(1));
+        console.log(data.date.replace(/-/g, "/"));
+        console.log(formatCredits(data.copyright));
+
         }, waitTime)
         
     })
