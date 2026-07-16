@@ -43,7 +43,7 @@ function formatCredits(credits) {
 function formatDate(date) {
     const now = new Date(date);
     const formattedDate = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
-    document.getElementById("date").innerHTML = formattedDate; 
+    document.getElementById("image-date").innerHTML = formattedDate; 
 }
 
 
