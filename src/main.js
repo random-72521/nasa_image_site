@@ -41,7 +41,7 @@ function formatCredits(credits) {
 
 
 function formatDate(date) {
-    const dates = data.date.split('-');
+    const dates = date.split('-');
     const formattedDate = `${dates[1]}/${dates[2]}/${dates[0]}`;
     document.getElementById("image-date").innerHTML = formattedDate;
 }
