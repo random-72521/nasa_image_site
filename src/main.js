@@ -42,7 +42,7 @@ function formatCredits(credits) {
 
 function formatDate(date) {
     const now = new Date(date);
-    const formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    const formattedDate = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
     document.getElementById("date").innerHTML = formattedDate; 
 }
 
@@ -115,7 +115,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         formatCredits(data.copyright);
 
         console.log(data.media_type[0].toUpperCase() + data.media_type.slice(1));
-        console.log(data.date.replace(/-/g, "/"));
+
         }, waitTime)
         
     })
