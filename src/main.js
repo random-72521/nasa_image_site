@@ -122,6 +122,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
 
         const download = document.getElementById("download")
         download.href = data.url;
+        download.setAttribute("download", data.url.split("/").pop());
 
         console.log(data.media_type[0].toUpperCase() + data.media_type.slice(1));
 
