@@ -3,6 +3,8 @@
     --window-color: #10222d;
     --font-color: #56c4d8;
     --shadow-font-color: #429babc3;
+    --light-window-color: #22475e;
+    --outline-color: #2d4347;
 }
 
 body {
@@ -67,4 +69,9 @@ th,td{
 .scanline.paused{
     animation-play-state: paused;
     opacity: 0;
+}
+
+input[type = "date"]{
+    background-color: var(--light-window-color);
+    border: 1px solid var(--outline-color)
 }
