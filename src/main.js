@@ -120,6 +120,9 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
         formatDate(data.date);
         formatCredits(data.copyright);
 
+        const download = document.getElementById("download")
+        download.href = data.url;
+
         console.log(data.media_type[0].toUpperCase() + data.media_type.slice(1));
 
         }, waitTime)
