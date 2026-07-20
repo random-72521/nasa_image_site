@@ -31,12 +31,18 @@ function updateClock() { //function to update the clock every second
 }
 
 function formatCredits(credits) {
-    let splitCredits = credits.split(" Text: ");
-    let imgCredits = splitCredits[0];
-    let textCredits = splitCredits[1];
-    imgCredits = imgCredits.replace(/\n/g, "");
-    textCredits = textCredits.replace(/\n/g, "");
-    document.getElementById("credits").innerHTML = `${imgCredits}, Text: ${textCredits}`;
+    if (credits.includes(" Text: ")) {
+        let splitCredits = credits.split(" Text: ");
+        let imgCredits = splitCredits[0];
+        let textCredits = splitCredits[1];
+        imgCredits = imgCredits.replace(/\n/g, "");
+        textCredits = textCredits.replace(/\n/g, "");
+        document.getElementById("credits").innerHTML = `${imgCredits}, Text: ${textCredits}`;
+    } else {
+        let formattedCredits = credits.replace(/\n/g, "");
+        document.getElementById("credits").innerHTML = formattedCredits;
+
+    }
 }
 
 
