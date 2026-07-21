@@ -9,8 +9,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NASA APOD</title>
-    <script type="module" crossorigin src="/nasa_image_site/assets/index-C4QP-sdL.js"></script>
-    <link rel="stylesheet" crossorigin href="/nasa_image_site/assets/index-B2ylare2.css">
+    <script type="module" crossorigin src="/nasa_image_site/assets/index-OnuPM5Ki.js"></script>
+    <link rel="stylesheet" crossorigin href="/nasa_image_site/assets/index-Bp_Cz8fN.css">
   </head>
 
   <body style = "display: flex; justify-content: center; align-items: center; flex-direction: column">
@@ -55,8 +55,9 @@
     <div style = "display: flex; width: 70%; height: 500px; transform: translateY(-225px);">
 
       <div style = "display: flex; width: 800px; font-family: 'Space Mono', monospace; 
-        align-items: center; justify-content: center; align-self: flex-start">
-            <p id = "info"></p>
+        align-items: center; justify-content: center; align-self: flex-start; border: 1px solid orange;
+        background-color: rgba(225, 172, 15, 0.36);">
+            <p id = "info" style = "color: orange">----------------------</p>
       </div>
 
       <div style = "display: flex; flex-direction: row; padding: 8px; gap: 8px; align-self: flex-end;
@@ -87,8 +88,8 @@
           <div style = "display: flex; flex-direction: column; gap: 10px">
 
             <a id = "download" download style = "text-decoration: none" target = "_blank">
-              <div style = "display: flex; border: 1px solid orange; width: 320px; height: 80px; align-items: center;
-              justify-content: center; color: orange; background-color: rgba(225, 172, 15, 0.36); cursor: pointer">
+              <div style = "display: flex; border: 1px solid #2d4347; width: 320px; height: 80px; align-items: center;
+              justify-content: center; background-color: #10222d; cursor: pointer">
                 <p>Go to Image/Video</p>
               </div>
             </a>
@@ -102,7 +103,7 @@
 
               <div style = "display: flex; border: 1px solid #2d4347; width: 160px; height: 40px; align-items: center;
               justify-content: center; color: #56c4d8; background-color: #10222d; cursor: pointer; flex-direction: column;
-              transform: translateY(10px)">
+              transform: translateY(10px)" onclick = "dateRefresh()">
                 Enter
               </div>
 
