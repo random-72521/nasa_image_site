@@ -230,6 +230,9 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
 
 document.getElementById("archive").addEventListener("click", dateRefresh);
 
+const today = new Date().toISOString().split("T")[0];
+document.getElementById("date-picker").max = today
+
 
 
 
