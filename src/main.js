@@ -30,7 +30,7 @@ function updateClock() { //function to update the clock every second
 
 }
 
-function formatCredits(credits) {
+function formatCredits(credits) { //format credits to be more readable
     if (credits) {
         if (credits.includes(" Text: ")) {
             let splitCredits = credits.split(" Text: ");
@@ -56,7 +56,7 @@ function formatDate(date) {
     document.getElementById("image-date").innerHTML = formattedDate;
 }
 
-function dateRefresh() {
+function dateRefresh() { //refresh image and info with a specific date
     const date = document.getElementById("date-picker").value;
     document.getElementById("loading").innerHTML = "Loading...";
 
@@ -228,9 +228,9 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
 
 });
 
-document.getElementById("archive").addEventListener("click", dateRefresh);
+document.getElementById("archive").addEventListener("click", dateRefresh); //event listener for button
 
-const today = new Date().toISOString().split("T")[0];
+const today = new Date().toISOString().split("T")[0]; //set max date for date picker to today
 document.getElementById("date-picker").max = today
 
 
