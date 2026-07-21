@@ -59,7 +59,7 @@ function formatDate(date) {
 function dateRefresh() {
     const date = document.getElementById("date-picker").value;
     document.getElementById("loading").innerHTML = "Loading...";
-    
+
     let scanline = document.querySelector(".scanline");
     scanline.classList.remove("paused");
 
@@ -224,6 +224,8 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`) //fetch from url
 
 
 });
+
+document.getElementById("archive").addEventListener("click", dateRefresh);
 
 
 
