@@ -45,7 +45,7 @@ function formatCredits(credits) {
 
         }
     } else {
-        document.getElementById("credits").innerHTML = "No copyright"
+        document.getElementById("credits").innerHTML = "Public Domain"
     }
 }
 
@@ -54,6 +54,92 @@ function formatDate(date) {
     const dates = date.split('-');
     const formattedDate = `${dates[1]}/${dates[2]}/${dates[0]}`;
     document.getElementById("image-date").innerHTML = formattedDate;
+}
+
+function dateRefresh() {
+    const date = document.getElementById("date-picker").value;
+    document.getElementById("loading").innerHTML = "Loading...";
+    
+    let scanline = document.querySelector(".scanline");
+    scanline.classList.remove("paused");
+
+    const image = document.getElementById("image");
+    image.removeChild(image.firstElementChild);
+
+    document.addEventListener('DOMContentLoaded', () => { //only runs fetch() after dom has loaded so it can access html elements
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}`) //fetch from url using api key
+        .then(response => response.json()) //format response
+        .then(data => {
+            console.log(data);
+
+            var waitTime = Math.max(0, 3000 - (Date.now() - startTime));
+
+
+
+            setTimeout(() => {
+                scanline.classList.toggle("paused");
+
+
+            
+            document.getElementById("loading").innerHTML = "" //remove loading 
+            
+            
+            if (data.media_type == "image") { //if it is an image
+                const image = document.createElement("img");
+                image.src = data.url;
+                image.id = "apod-image";
+                image.style.display = "block";
+                image.style.width = "100%";
+                image.style.height = "100%";
+                image.style.margin = "auto" //center
+                image.style.objectFit = "contain"; //fit entire parent div without changing aspect ratios
+
+                document.getElementById("image").appendChild(image);
+            }
+
+            else if (data.media_type == "video") { // if it is a video
+                const video = document.createElement("video");
+                video.src = data.url;
+                video.id = "apod-image";
+                video.controls = true;
+                video.style.display = "block";
+                video.style.width = "100%";
+                video.style.height = "100%";
+                video.style.margin = "auto"
+                video.style.objectFit = "contain";
+
+
+
+                document.querySelector("#image").appendChild(video);
+
+            } else {
+                document.querySelector("#app").innerHTML = "<p>Some weird stuff happened.</p>";
+            }
+
+            
+            document.getElementById("title").innerHTML = data.title; //add title and explanation
+            document.getElementById("info").innerHTML = data.explanation;
+            
+            document.getElementById("media-type").innerHTML = data.media_type[0].toUpperCase() + data.media_type.slice(1);
+            formatDate(data.date);
+            formatCredits(data.copyright);
+
+            const download = document.getElementById("download");
+            download.href = data.url;
+
+                
+
+
+            console.log(data.media_type[0].toUpperCase() + data.media_type.slice(1));
+
+            }, waitTime)
+            
+        })
+
+
+    });
+
+
 }
 
 
