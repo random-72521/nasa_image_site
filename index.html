@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,10 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NASA APOD</title>
   </head>
+
   <body style = "display: flex; justify-content: center; align-items: center; flex-direction: column">
+
     <p style = "align-self: flex-start;">NASA - Astronomy Picture of the Day</p>
     <div id = "app" style = "display: flex; width: 100%; height: 880px; justify-content:center; align-items: center; 
     flex-direction: column">
+
       <p id = "loading">Loading...</p>
 
       <div id = "imageArea" style = "display: flex; height: 70%; width:85%; flex-direction: column; border: 1px solid #324447">
@@ -48,60 +51,65 @@
 
     </div>
 
-    <div style = "display: flex; width: 600px; font-family: 'Space Mono', monospace; 
-      align-items: center; justify-content: center; align-self: flex-start">
-          <p id = "info"></p>
-    </div>
+    <div style = "display: flex; width: 100%; height: 500px">
 
-    <div style = "display: flex; flex-direction: row; padding: 8px; gap: 8px; align-self: flex-end;
-    width: 650px; align-items: center; border: 1px solid blue; transform: translateY(-150px);">
+      <div style = "display: flex; width: 600px; font-family: 'Space Mono', monospace; 
+        align-items: center; justify-content: center; align-self: flex-start">
+            <p id = "info"></p>
+      </div>
 
+      <div style = "display: flex; flex-direction: row; padding: 8px; gap: 8px; align-self: flex-end;
+      width: 600px; align-items: center; justify-content: center; justify-self: flex-end;">
 
-      
-      <div style = "display: flex; flex-direction: column; align-items: center;">
-        <div style = "transform: translateY(-100px); display: flex; flex-direction: column">
-          <table style = "table-layout: auto; width: auto; font-family: 'Space Mono', monospace">
-            <tr>
-              <td>Media Type</td>
-              <td id = "media-type">woweeeeeeeeeeeeeeeeeeeee</td>
-            </tr>
-            <tr>
-              <td>Date</td>
-              <td id = "image-date">9/67/6767</td>
-            </tr>
-            <tr>
-              <td>Copyright</td>
-              <td id = "credits">yabayabadoooooooooooooooooooooooo</td>
-            </tr>
-          </table>
+        
+        <div style = "display: flex; flex-direction: column; align-items: center; width: fit-content; height: fit-content; align-self: flex-end;
+        align-items: center; justify-content: center; transform: translateX(150px);">
 
-        </div>
-
-
-        <div style = "display: flex; flex-direction: column">
-          <a id = "download" download style = "text-decoration: none" target = "_blank">
-            <div style = "display: flex; border: 1px solid orange; width: 320px; height: 80px; align-items: center;
-            justify-content: center; color: orange; background-color: rgba(225, 172, 15, 0.36); cursor: pointer">
-              <p>Go to Image/Video</p>
-            </div>
-          </a>
-
-          <div style = "height: 25px"></div>
-
-          <div style = "display: flex; border: 1px solid #2d4347; width: 320px; height: 180px; align-items: center;
-            justify-content: center; color: #56c4d8; background-color: #10222d; flex-direction: column;">
-            <p>Archive</p>
-            <input id = "date-picker" type = "date">
-
-            <div style = "display: flex; border: 1px solid #2d4347; width: 160px; height: 40px; align-items: center;
-            justify-content: center; color: #56c4d8; background-color: #10222d; cursor: pointer; flex-direction: column;
-            transform: translateY(10px)">
-              Enter
-            </div>
+          <div style = "display: flex; flex-direction: column">
+            <table style = "table-layout: auto; width: auto; font-family: 'Space Mono', monospace">
+              <tr>
+                <td>Media Type</td>
+                <td id = "media-type">woweeeeeeeeeeeeeeeeeeeee</td>
+              </tr>
+              <tr>
+                <td>Date</td>
+                <td id = "image-date">5/67/6767</td>
+              </tr>
+              <tr>
+                <td>Copyright</td>
+                <td id = "credits">yabadabadoooooooooooooooooooooooo</td>
+              </tr>
+            </table>
           </div>
 
+
+          <div style = "display: flex; flex-direction: column">
+
+            <a id = "download" download style = "text-decoration: none" target = "_blank">
+              <div style = "display: flex; border: 1px solid orange; width: 320px; height: 80px; align-items: center;
+              justify-content: center; color: orange; background-color: rgba(225, 172, 15, 0.36); cursor: pointer">
+                <p>Go to Image/Video</p>
+              </div>
+            </a>
+
+            <div style = "height: 25px"></div>
+
+            <div style = "display: flex; border: 1px solid #2d4347; width: 320px; height: 180px; align-items: center;
+              justify-content: center; color: #56c4d8; background-color: #10222d; flex-direction: column;">
+              <p>Archive</p>
+              <input id = "date-picker" type = "date">
+
+              <div style = "display: flex; border: 1px solid #2d4347; width: 160px; height: 40px; align-items: center;
+              justify-content: center; color: #56c4d8; background-color: #10222d; cursor: pointer; flex-direction: column;
+              transform: translateY(10px)">
+                Enter
+              </div>
+
+            </div>
+
           </div>
         </div>
+      </div>
     </div>
 
 
