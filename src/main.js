@@ -60,11 +60,13 @@ function dateRefresh() {
     const date = document.getElementById("date-picker").value;
     document.getElementById("loading").innerHTML = "Loading...";
 
-    let scanline = document.querySelector(".scanline");
+    var scanline = document.querySelector(".scanline");
     scanline.classList.remove("paused");
 
     const image = document.getElementById("image");
-    image.removeChild(image.firstElementChild);
+    const child = document.getElementById("apod-image");
+
+    image.removeChild(child)
 
     document.addEventListener('DOMContentLoaded', () => { //only runs fetch() after dom has loaded so it can access html elements
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}`) //fetch from url using api key
