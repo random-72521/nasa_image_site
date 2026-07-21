@@ -68,11 +68,11 @@ function dateRefresh() {
 
     image.removeChild(child)
 
-    document.addEventListener('DOMContentLoaded', () => { //only runs fetch() after dom has loaded so it can access html elements
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}`) //fetch from url using api key
         .then(response => response.json()) //format response
         .then(data => {
             console.log(data);
+            
 
             var waitTime = Math.max(0, 3000 - (Date.now() - startTime));
 
@@ -135,8 +135,7 @@ function dateRefresh() {
             console.log(data.media_type[0].toUpperCase() + data.media_type.slice(1));
 
             }, waitTime)
-            
-        })
+        
 
 
     });
