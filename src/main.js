@@ -66,7 +66,9 @@ function dateRefresh() {
     const image = document.getElementById("image");
     const child = document.getElementById("apod-image");
 
-    image.removeChild(child)
+    if (child) {
+        image.removeChild(child)
+    }
 
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}`) //fetch from url using api key
         .then(response => response.json()) //format response
